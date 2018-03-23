@@ -1,0 +1,23 @@
+<?php
+include '../konek.php';
+session_start();
+if($_SESSION['status'] !="login"){
+ header("location:login.php");
+}
+$nisn = $_SESSION['nisn'];
+/////masukkan variabel coeg :D////
+$nis = $_POST['nis'];
+$nik = $_POST['nik'];
+$namel = $_POST['namel'];
+$tl = $_POST['tl'];
+$ttl = $_POST['ttl'];
+$agama = $_POST['agama'];
+$alamat = $_POST['alamat'];
+$nopel = $_POST['nopel'];
+$nope = $_POST['nope'];
+$email = $_POST['email'];
+$fotoku=mysql_real_escape_string($fotoku);
+/////////////////////////////////
+mysql_query("INSERT INTO bio VALUES ('$nisn', '$nis', '$nik', '$namel', '$tl', '$ttl', '$agama', '$alamat', '$nopel', '$nope', '$email', '$fotoku')") or die(mysql_error());
+exit(header("location:foto.php?nisn=$nisn"));
+?>
