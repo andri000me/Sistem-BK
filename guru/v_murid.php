@@ -43,7 +43,7 @@ if(isset($_GET['cari'])){
 
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];
-		$data = mysql_query("select * from bk.bio where namel like '%".$cari."%' OR kelas like '%".$cari."%' ");
+		$data = mysql_query("select * from bk.bio where namel like '%".$cari."%' OR kelas like '%".$cari."%' OR nisn like '%".$cari."%' ");
 	}else{
 		$data = mysql_query("select * from bk.bio");
 
