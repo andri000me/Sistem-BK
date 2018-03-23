@@ -8,5 +8,6 @@ mysql_query("DELETE FROM smt2 WHERE nisn='$nisn'")or die(mysql_error());
 mysql_query("DELETE FROM smt3 WHERE nisn='$nisn'")or die(mysql_error());
 mysql_query("DELETE FROM smt4 WHERE nisn='$nisn'")or die(mysql_error());
 mysql_query("DELETE FROM smt5 WHERE nisn='$nisn'")or die(mysql_error());
-
+echo "<script>alert('Data berhasil dihapus');</script>";
+echo "<script>history.go(-1);</script>";
 ?>
