@@ -26,8 +26,9 @@ if(!$hasil>0){
     die(mysql_error());
 }else{
 //          jika impor berhasil
-    echo "<script>alert('data berhasil di upload dengan username $nisn dan passowrd $password2');</script>";
-    echo "<script>window.history.go(-1);</script>";
+    echo "<b>data berhasil di upload dengan username $nisn dan passowrd $password2</b>";
+    echo "<br/>";
+    echo "<a href=\"javascript:history.go(-1)\">Kembali</a>";
 }
 $query2 = "INSERT into bk.bio (nisn)VALUES('$nisn')";
 mysql_query($query2) or die (mysql_error());

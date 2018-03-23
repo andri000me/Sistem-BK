@@ -39,14 +39,17 @@ if(isset($_GET['cari'])){
     <th colspan="3">Aksi</th>
   </tr>
   <?php
+
+
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];
 		$data = mysql_query("select * from bk.bio where namel like '%".$cari."%' OR kelas like '%".$cari."%' ");
 	}else{
 		$data = mysql_query("select * from bk.bio");
-	}
-  while($y = mysql_fetch_array($data)){
 
+	}
+
+  while($y = mysql_fetch_array($data)){
     echo "<tr>";
     echo "<td><img src='../login/images/tmp/".$y['fotoku']."' width='100' height='150'></td>";
 		echo "<td>".$y['nisn']."</td>";
